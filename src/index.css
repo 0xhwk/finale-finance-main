@@ -247,7 +247,7 @@ button:hover {
   height: 100%;
   z-index: 0;
   filter: brightness(0.3);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .vision-top {
   height: 100%;
@@ -332,7 +332,6 @@ button:hover {
   height: 50vh;
   background-color: var(--black);
   padding: 7%;
-  overflow-x: hidden;
 }
 .team-member {
   display: flex;
