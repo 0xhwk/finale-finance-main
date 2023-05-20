@@ -38,11 +38,7 @@ const Header = () => {
         >
           <Twitter className="header-social"></Twitter>
         </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://discord.gg/cPAMGary"
-        >
+        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg">
           <Discord className="header-social"></Discord>
         </a>
         <a
