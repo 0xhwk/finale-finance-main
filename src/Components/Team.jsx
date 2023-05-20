@@ -8,7 +8,11 @@ const Team = () => {
         <img src={basar} alt="teamBasar"></img>
         <div className="team-links"></div>
         <div className="team-name">0xBasar</div>
-        <a href="https://twitter.com/0xbasar">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/0xbasar"
+        >
           <Twitter className="team-svg"></Twitter>
         </a>
       </div>
@@ -16,7 +20,11 @@ const Team = () => {
         <img src={codeesura} alt="teamCodeesura"></img>
         <div className="team-links"></div>
         <div className="team-name">codeesura</div>
-        <a href="https://twitter.com/codeesura">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/codeesura"
+        >
           <Twitter className="team-svg"></Twitter>
         </a>
       </div>
@@ -24,7 +32,11 @@ const Team = () => {
         <img src={hwk} alt="teamHwk"></img>
         <div className="team-links"></div>
         <div className="team-name">hwk</div>
-        <a href="https://twitter.com/YAA_HAWK">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/YAA_HAWK"
+        >
           <Twitter className="team-svg"></Twitter>
         </a>
       </div>

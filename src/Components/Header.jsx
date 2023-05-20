@@ -31,16 +31,34 @@ const Header = () => {
       </div>
       <div className="header-sections"></div>
       <div className="header-links">
-        <a href="https://twitter.com/FinaleFinance">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/FinaleFinance"
+        >
           <Twitter className="header-social"></Twitter>
         </a>
-        <a href="https://twitter.com/FinaleFinance">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://discord.gg/cPAMGary"
+        >
           <Discord className="header-social"></Discord>
         </a>
-        <a href="https://twitter.com/FinaleFinance">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/FinaleFinance"
+        >
           <Github className="header-social"></Github>
         </a>
-        <button className="header-button">Launch App</button>
+        <button
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-button"
+        >
+          Launch App
+        </button>
       </div>
     </div>
   );
