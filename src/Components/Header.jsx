@@ -29,25 +29,11 @@ const Header = () => {
         <img src={logoWhite} alt="finaleLogo"></img>
         <img src={finaleWhite} alt="finaleText"></img>
       </div>
-      <div className="header-sections"></div>
       <div className="header-links">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/FinaleFinance"
-        >
-          <Twitter className="header-social"></Twitter>
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg">
-          <Discord className="header-social"></Discord>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/FinaleFinance"
-        >
-          <Github className="header-social"></Github>
-        </a>
+        <div className="header-item">Blog</div>
+        <div className="header-item">Api</div>
+        <div className="header-item">Docs</div>
+        <div className="header-item">Ecosystem</div>
         <button
           target="_blank"
           rel="noopener noreferrer"

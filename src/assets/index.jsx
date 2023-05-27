@@ -1,23 +1,20 @@
 import finaleWhite from "./finale-white.webp";
 import logoWhite from "./logo-white.webp";
 import map from "./map.webp";
+import logoRed from "./logo-red.webp";
+import logoBlackWhite from "./logo-black-white.webp";
 
 import twitter from "./twitter.svg";
 import discord from "./discord.svg";
 import github from "./github.svg";
 
-import hwk from "./hwk.webp";
-import codeesura from "./codeesura.webp";
-import basar from "./0xbasar.webp";
-
 export {
   finaleWhite,
   logoWhite,
   map,
+  logoRed,
+  logoBlackWhite,
   discord,
   twitter,
   github,
-  basar,
-  hwk,
-  codeesura,
 };

@@ -5,7 +5,7 @@ import { finaleWhite, logoWhite } from "../assets";
 
 const Footer = () => {
   return (
-    <div className="footer-container background-gradient">
+    <div className="footer-container ">
       <div className="footer-links-social-container">
         <div className="footer-links">
           <a
@@ -13,21 +13,21 @@ const Footer = () => {
             rel="noopener noreferrer"
             href="https://twitter.com/FinaleFinance"
           >
-            <Twitter className="header-social"></Twitter>
+            <Twitter className="footer-social"></Twitter>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://discord.gg"
           >
-            <Discord className="header-social"></Discord>
+            <Discord className="footer-social"></Discord>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/FinaleFinance"
           >
-            <Github className="header-social"></Github>
+            <Github className="footer-social"></Github>
           </a>
         </div>
         <div className="footer-logo">
@@ -35,9 +35,6 @@ const Footer = () => {
           <img src={finaleWhite} alt="finaleText"></img>
         </div>
       </div>
-      <div className="landing-blur"></div>
-      <div className="landing-bg-red"></div>
-      <div className="landing-bg-pink"></div>
     </div>
   );
 };
