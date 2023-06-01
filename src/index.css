@@ -116,6 +116,7 @@ button:hover {
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
+  width: 35%;
   gap: 15px;
 }
 .header-item {
