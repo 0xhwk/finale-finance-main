@@ -1,13 +1,12 @@
 import { finaleWhite, logoWhite } from "../assets";
-import { ReactComponent as Discord } from "../assets/discord.svg";
-import { ReactComponent as Github } from "../assets/github.svg";
-import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { useEffect, useState } from "react";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [headerTheme, setHeaderTheme] = useState("");
-
+  const [isMobileDropdownOpen, setisMobileDropdownOpen] = useState(false);
+  const width = window.innerWidth;
+  const breakpoint = 620;
   useEffect(() => {
     const handleHeaderTheme = () => {
       setScrollPosition(window.scrollY);
@@ -23,17 +22,20 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleHeaderTheme);
   }, [scrollPosition]);
-  return (
-    <div className={`header-container ${headerTheme}`}>
-      <div className="header-logo">
-        <img src={logoWhite} alt="finaleLogo"></img>
-        <img src={finaleWhite} alt="finaleText"></img>
-      </div>
-      <div className="header-links">
-        <div className="header-item">Blog</div>
-        <div className="header-item">Api</div>
-        <div className="header-item">Docs</div>
-        <div className="header-item">Ecosystem</div>
+
+  const desktopHeader = () => {
+    return (
+      <div className={`header-container ${headerTheme}`}>
+        <div className="header-logo">
+          <img src={logoWhite} alt="finaleLogo"></img>
+          <img src={finaleWhite} alt="finaleText"></img>
+        </div>
+        <div className="header-links">
+          <div className="header-item">Blog</div>
+          <div className="header-item">Api</div>
+          <div className="header-item">Docs</div>
+          <div className="header-item">Ecosystem</div>
+        </div>
         <button
           target="_blank"
           rel="noopener noreferrer"
@@ -42,8 +44,35 @@ const Header = () => {
           Launch App
         </button>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const mobileHeader = () => {
+    return (
+      <div className={`header-container ${headerTheme}`}>
+        <div className="header-logo">
+          <img src={logoWhite} alt="finaleLogo"></img>
+          <img src={finaleWhite} alt="finaleText"></img>
+        </div>
+
+        <div className={`header-links ${isMobileDropdownOpen ? "hidden" : ""}`}>
+          <div className="header-item">Blog</div>
+          <div className="header-item">Api</div>
+          <div className="header-item">Docs</div>
+          <div className="header-item">Ecosystem</div>
+        </div>
+        <button
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-button"
+        >
+          Launch App
+        </button>
+      </div>
+    );
+  };
+
+  return width < breakpoint ? mobileHeader() : desktopHeader();
 };
 
 export default Header;

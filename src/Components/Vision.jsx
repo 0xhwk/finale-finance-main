@@ -22,6 +22,7 @@ const Vision = () => {
               the full potential of decentralized finance.
             </p>
           </div>
+
           <div className="developers-banner banner-red">
             <h1 className="developers-header">
               Read the Docs
