@@ -1,12 +1,15 @@
 import { finaleWhite, logoWhite } from "../assets";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { ReactComponent as MenuIcon } from "../assets/menuIcon.svg";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [headerTheme, setHeaderTheme] = useState("");
-  const [isMobileDropdownOpen, setisMobileDropdownOpen] = useState(false);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const width = window.innerWidth;
   const breakpoint = 620;
+  const sideBarRef = useRef(null);
+
   useEffect(() => {
     const handleHeaderTheme = () => {
       setScrollPosition(window.scrollY);
@@ -22,6 +25,21 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleHeaderTheme);
   }, [scrollPosition]);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
+        console.log("click");
+        setIsMobileSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const desktopHeader = () => {
     return (
@@ -51,16 +69,27 @@ const Header = () => {
     return (
       <div className={`header-container ${headerTheme}`}>
         <div className="header-logo">
+          <a className="menu-icon" onClick={() => setIsMobileSidebarOpen(true)}>
+            <MenuIcon></MenuIcon>
+          </a>
           <img src={logoWhite} alt="finaleLogo"></img>
-          <img src={finaleWhite} alt="finaleText"></img>
+        </div>
+        <div
+          ref={sideBarRef}
+          className={`mobile-header-links ${
+            isMobileSidebarOpen ? "header-visible" : ""
+          }`}
+        >
+          <div className="mobile-header-logo">
+            <img src={logoWhite} alt="finaleLogo"></img>
+            <img src={finaleWhite} alt="finaleText"></img>
+          </div>
+          <div className="mobile-header-item">Blog</div>
+          <div className="mobile-header-item">Api</div>
+          <div className="mobile-header-item">Docs</div>
+          <div className="mobile-header-item">Ecosystem</div>
         </div>
 
-        <div className={`header-links ${isMobileDropdownOpen ? "hidden" : ""}`}>
-          <div className="header-item">Blog</div>
-          <div className="header-item">Api</div>
-          <div className="header-item">Docs</div>
-          <div className="header-item">Ecosystem</div>
-        </div>
         <button
           target="_blank"
           rel="noopener noreferrer"
