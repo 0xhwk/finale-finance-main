@@ -6,9 +6,13 @@ const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [headerTheme, setHeaderTheme] = useState("");
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const width = window.innerWidth;
-  const breakpoint = 620;
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 820;
   const sideBarRef = useRef(null);
+
+  window.addEventListener("resize", (event) =>
+    setWidth(event.target.innerWidth)
+  );
 
   useEffect(() => {
     const handleHeaderTheme = () => {
