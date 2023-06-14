@@ -1,6 +1,3 @@
-import { ReactComponent as Discord } from "../assets/discord.svg";
-import { ReactComponent as Github } from "../assets/github.svg";
-import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { finaleWhite, logoWhite } from "../assets";
 
 const Footer = () => {

@@ -1,7 +1,3 @@
-import { ReactComponent as Discord } from "../assets/discord.svg";
-import { ReactComponent as Github } from "../assets/github.svg";
-import { ReactComponent as Twitter } from "../assets/twitter.svg";
-import { ReactComponent as OutboundIcon } from "../assets/outbound.svg";
 const Vision = () => {
   return (
     <div className="vision-container background-gradient">
