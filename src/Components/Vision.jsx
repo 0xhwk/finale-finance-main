@@ -46,15 +46,30 @@ const Vision = () => {
           swaps, to the user.
         </div>
         <div className="developers-bottom">
-          <div className="developers-social">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/FinaleFinance"
+            className="developers-social"
+          >
             Twitter <Twitter className="developers-logo"></Twitter>
-          </div>
-          <div className="developers-social ">
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://discord.gg/tjeAFpssBZ"
+            className="developers-social "
+          >
             Discord <Discord className=" developers-logo"></Discord>
-          </div>
-          <div className="developers-social ">
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/FinaleFinance"
+            className="developers-social "
+          >
             Github <Github className=" developers-logo"></Github>
-          </div>
+          </a>
         </div>
       </div>
     </div>
