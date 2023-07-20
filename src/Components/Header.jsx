@@ -59,7 +59,7 @@ const Header = () => {
           <div className="header-item">Ecosystem</div>
         </div>
         <a
-          href="https://finalefinance.xyz"
+          href="https://app.finalefinance.xyz"
           target="_blank"
           rel="noopener noreferrer"
           className="header-button"
@@ -95,13 +95,14 @@ const Header = () => {
           <div className="mobile-header-item">Ecosystem</div>
         </div>
 
-        <button
+        <a
+          href="https://app.finalefinance.xyz"
           target="_blank"
           rel="noopener noreferrer"
           className="header-button"
         >
           Launch App
-        </button>
+        </a>
       </div>
     );
   };
