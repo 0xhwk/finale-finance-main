@@ -58,13 +58,14 @@ const Header = () => {
           <div className="header-item">Docs</div>
           <div className="header-item">Ecosystem</div>
         </div>
-        <button
+        <a
+          href="https://finalefinance.xyz"
           target="_blank"
           rel="noopener noreferrer"
           className="header-button"
         >
           Launch App
-        </button>
+        </a>
       </div>
     );
   };

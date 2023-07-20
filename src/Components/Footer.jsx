@@ -18,7 +18,7 @@ const Footer = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://discord.gg"
+            href="https://discord.gg/tjeAFpssBZ"
           >
             <Discord className="footer-social"></Discord>
           </a>
