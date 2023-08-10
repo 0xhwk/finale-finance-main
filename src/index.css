@@ -33,7 +33,6 @@
 img {
   display: block;
   max-width: 100%;
-  width: 100%;
   height: 100%;
   object-fit: contain;
 }
@@ -453,6 +452,7 @@ svg {
   align-items: center;
   width: 100%;
   height: 100%;
+  gap: 2vw;
 }
 .developers-header {
   max-height: 100px;
@@ -648,8 +648,6 @@ svg {
 }
 .footer-links-social-container img {
   height: 100%;
-  width: fit-content;
-  /* width: min-content; */
 }
 
 .footer-links {
@@ -765,9 +763,6 @@ svg {
   }
   .developers-social {
     padding: 3px;
-  }
-  .developers-bottom {
-    gap: 5px;
   }
 
   .developers-top {
