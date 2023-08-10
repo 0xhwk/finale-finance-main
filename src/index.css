@@ -222,12 +222,12 @@ svg {
 }
 .header-logo {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   height: 100%;
-  width: 17%;
-  margin-left: 1%;
-  gap: 10px;
+  width: 100%;
+  gap: 15px;
+  padding: 0.5vh 0;
 }
 .header-logo img {
   height: 100%;
@@ -249,7 +249,9 @@ svg {
   overflow-x: hidden;
   background-image: url("./assets/map.webp");
   background-size: cover;
+  background-position: center;
   background-blend-mode: color-dodge;
+  background-repeat: no-repeat;
 }
 .landing-blur {
   position: absolute;
@@ -379,7 +381,7 @@ svg {
   display: flex;
   justify-content: flex-start;
   padding: 20vh 5% 2% 5%;
-  height: 80vh;
+  height: 82vh;
   width: 100%;
   color: var(--white);
   background-color: var(--black);
@@ -738,7 +740,9 @@ svg {
     padding: 5% 5%;
     background-image: url("./assets/map.webp");
     background-size: cover;
+    background-position: center;
     background-blend-mode: color-dodge;
+    background-repeat: no-repeat;
   }
   .vision-top {
     flex-direction: column;
