@@ -61,7 +61,7 @@ const Footer = ({ position }) => {
               href="https://twitter.com/FinaleFinance"
               className="developers-social"
             >
-              {width > breakpoint ? Twitter : ""}
+              {width > breakpoint ? "Twitter" : ""}
               <Twitter className="developers-logo"></Twitter>
             </a>
             <a
@@ -70,7 +70,7 @@ const Footer = ({ position }) => {
               href="https://discord.gg/tjeAFpssBZ"
               className="developers-social "
             >
-              {width > breakpoint ? Discord : ""}{" "}
+              {width > breakpoint ? "Discord" : ""}
               <Discord className=" developers-logo"></Discord>
             </a>
             <a
@@ -79,7 +79,7 @@ const Footer = ({ position }) => {
               href="https://github.com/FinaleFinance"
               className="developers-social "
             >
-              {width > breakpoint ? Github : ""}
+              {width > breakpoint ? "Github" : ""}
               <Github className=" developers-logo"></Github>
             </a>
           </div>
