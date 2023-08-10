@@ -20,15 +20,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-h1 {
-  font-weight: 800;
-}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: clamp(0.4rem, 0.5rem + 1vw, 1rem);
 }
 *::selection {
   color: var(--white);
@@ -41,9 +37,7 @@ img {
   height: 100%;
   object-fit: contain;
 }
-p {
-  font-weight: 300;
-}
+
 button {
   width: 100%;
   height: 100%;
@@ -52,8 +46,8 @@ button {
 }
 button:hover {
   filter: brightness(110%);
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 a {
   font-weight: 500;
@@ -61,14 +55,85 @@ a {
 }
 a:hover {
   filter: brightness(110%);
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 svg {
   display: block;
   height: 100%;
 }
+/* UTILS */
+.flex {
+  display: flex;
+  align-items: center;
+}
+.jc-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-se {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.h100 {
+  height: 100%;
+}
+.w100 {
+  width: 100%;
+}
+.gap {
+  gap: 15px;
+}
+.shadow {
+  background-color: var(--black);
+}
+.border {
+  border-radius: 0px;
+}
+.fstrong {
+  font-size: clamp(38px, 5vh + 1rem, 100px);
+  font-weight: 900;
+  color: var(--white);
+}
+.fstrong::placeholder {
+  font-weight: 900;
+  color: var(--white);
+}
+.fstrong:disabled {
+  font-size: larger;
+  font-weight: 900;
+  color: var(--white);
+}
+.fstandard {
+  font-size: clamp(28px, 3vh + 1rem, 78px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 2;
+}
+.fsecondary {
+  font-size: clamp(18px, 1vh + 1rem, 52px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 2;
+}
+.finfo {
+  font-size: clamp(12px, 0.05vh + 0.5rem + 0.3vw, 42px);
+  font-weight: 400;
+  color: var(--white);
+}
 .background-gradient {
   background: linear-gradient(252deg, var(--red-bright), var(--pink));
   background-size: 400% 400%;
@@ -79,17 +144,9 @@ svg {
   overflow: hidden;
 }
 .header-gradient {
-  background: var(--red-bright); /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    var(--red-bright),
-    var(--pink)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    var(--red-bright),
-    var(--pink)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--red-bright);
+  background: -webkit-linear-gradient(to right, var(--red-bright), var(--pink));
+  background: linear-gradient(to right, var(--red-bright), var(--pink));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -120,18 +177,19 @@ svg {
   height: 120%;
   min-width: fit-content;
   padding: 1% 2%;
-  margin-left: 5%;
-  transition: all 0.3s ease 0s;
-  background-color: var(--white);
-  color: var(--black);
-}
 
+  transition: all 0.3s ease 0s;
+  color: var(--white);
+}
+.header-buttons-container {
+  justify-content: flex-end;
+}
 .header-links {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-  width: 35%;
+  width: min-content;
   gap: 15px;
 }
 .header-item {
@@ -142,6 +200,7 @@ svg {
   width: 100%;
   transition: 0.3s ease;
   font-weight: 700;
+  margin-right: 3vw;
 }
 .header-item:hover {
   cursor: not-allowed;
@@ -185,10 +244,13 @@ svg {
 /* LANDING -------------------------------- */
 
 .landing-container {
-  height: 100vh;
+  height: 95vh;
   position: relative;
-  background-color: #000;
+  background-color: var(--black);
   overflow-x: hidden;
+  background-image: url("./assets/map.webp");
+  background-size: cover;
+  background-blend-mode: color-dodge;
 }
 .landing-blur {
   position: absolute;
@@ -199,14 +261,11 @@ svg {
   z-index: 1;
 }
 .landing-description {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   z-index: 3;
-  bottom: 20%;
+  top: 40%;
   left: 5%;
-  padding-right: 50%;
-  gap: 10vh;
+  padding-right: 40%;
   color: var(--white);
 }
 .landing-description p {
@@ -215,7 +274,6 @@ svg {
 }
 
 .landing-title {
-  font-size: 300%;
   text-shadow: 1px 1px 25px var(--header-white-shadow);
 }
 
@@ -308,19 +366,6 @@ svg {
 }
 
 /* Vision --------------------------- */
-.vision-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 5%;
-  height: 80vh;
-  width: 100%;
-  color: var(--white);
-  background-color: var(--black);
-  overflow-x: hidden;
-}
-
 .map {
   position: absolute;
   object-fit: cover;
@@ -330,43 +375,57 @@ svg {
   overflow: hidden;
   z-index: 0;
 }
+.vision-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20vh 5% 2% 5%;
+  height: 80vh;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--black);
+  overflow-x: hidden;
+  background-image: url("./assets/map.webp");
+  background-size: cover;
+  background-blend-mode: color-dodge;
+}
+
 .vision-top {
-  height: 50%;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 3%;
+  flex-direction: column;
+  align-items: left;
+  padding-right: 5vw;
 }
 .vision-bottom {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 3%;
-  height: 50%;
   width: 100%;
+  gap: 5vh;
+  padding-left: 5vw;
 }
 .vision-header {
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 40%;
-  font-size: 230%;
-  text-shadow: 0px 0px 10px var(--dark-shadow);
+  line-height: 1.4;
 }
 
 .vision-text {
-  line-height: 1.8;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  max-width: 550px;
 
-  width: 40%;
-  text-shadow: 0px 0px 15px var(--black);
+  line-height: 1.8;
   z-index: 3;
 }
+
 .outbound-icon {
-  height: 100%;
   width: min-content;
-  fill: var(--white);
-  stroke: var(--white);
+  fill: var(--header-white-shadow);
+  stroke: var(--header-white-shadow);
 }
 /* DEVELOPERS -------------------------------------------------------- */
 
@@ -400,70 +459,134 @@ svg {
   display: flex;
   justify-content: left;
   align-items: center;
-  text-shadow: 2px 3px 6px var(--black);
-  font-size: 120%;
 }
 
 .developers-social {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 30%;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 8px;
   border: 1px solid var(--white);
-  background-color: var(--light-shadow);
-  padding: 2% 2%;
-  font-size: 110%;
+  padding: 10px 10px;
   color: var(--white);
   transition: all 0.3s ease;
 }
 .developers-social:hover {
   cursor: pointer;
-  background-color: var(--dark-shadow);
+  background-color: var(--light-shadow);
   color: var(--white);
   box-shadow: 1px 1px 10px var(--light-shadow);
-  transform: scale(1.01);
 }
 .developers-logo {
   height: 100%;
   width: min-content;
   fill: var(--white);
+  padding-left: 5px;
 }
 .developers-banner {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-repeat: no-repeat;
-  background-size: 60%;
-  height: 60%;
-  min-height: 200px;
-  padding: 5% 3%;
-  border: var(--white) solid 1px;
-  border-radius: 50px;
+  height: calc(200px + 3vh);
+  border-radius: 8px;
   text-decoration: none;
   text-emphasis: none;
   transition: 0.5s;
-  text-shadow: 3px 3px 6px var(--black);
+  border: px solid var(--light-shadow);
 }
-
+.banner-bg-blue {
+  background: rgb(21, 21, 21);
+  background: -moz-linear-gradient(
+    61deg,
+    rgba(21, 21, 21, 1) 0%,
+    rgba(14, 65, 83, 1) 11%,
+    rgba(6, 146, 145, 1) 26%,
+    rgba(7, 91, 129, 1) 72%,
+    rgba(18, 7, 103, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    61deg,
+    rgba(21, 21, 21, 1) 0%,
+    rgba(14, 65, 83, 1) 11%,
+    rgba(6, 146, 145, 1) 26%,
+    rgba(7, 91, 129, 1) 72%,
+    rgba(18, 7, 103, 1) 100%
+  );
+  background: linear-gradient(
+    61deg,
+    rgba(21, 21, 21, 1) 0%,
+    rgba(14, 65, 83, 1) 11%,
+    rgba(6, 146, 145, 1) 26%,
+    rgba(7, 91, 129, 1) 72%,
+    rgba(18, 7, 103, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#151515",endColorstr="#120767",GradientType=1);
+}
+.banner-bg-purple {
+  background: rgb(26, 26, 26);
+  background: -moz-linear-gradient(
+    61deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(93, 62, 72, 1) 11%,
+    rgba(111, 3, 136, 1) 26%,
+    rgba(135, 69, 213, 1) 72%,
+    rgba(147, 121, 254, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    61deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(93, 62, 72, 1) 11%,
+    rgba(111, 3, 136, 1) 26%,
+    rgba(135, 69, 213, 1) 72%,
+    rgba(147, 121, 254, 1) 100%
+  );
+  background: linear-gradient(
+    61deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(93, 62, 72, 1) 11%,
+    rgba(111, 3, 136, 1) 26%,
+    rgba(135, 69, 213, 1) 72%,
+    rgba(147, 121, 254, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1a1a",endColorstr="#9379fe",GradientType=1);
+}
+.developers-text {
+  padding: 3vw;
+  z-index: 4;
+}
 /* .developers-banner p {
   color: var(--white);
 } */
 .banner-black {
+  position: absolute;
+  padding: 0 4vw;
   background-color: var(--black);
-  background-image: url("./assets/logo-red.webp");
+  background-image: url("./assets/logo-white.webp");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 8px;
   color: var(--white);
+  transition: 0.5s;
+  opacity: 0.2;
+  border: 5px solid var(--header-white-shadow);
 }
 .banner-red {
-  background-color: var(--dark-shadow);
-  background-image: url("./assets/logo-red.webp");
+  position: absolute;
+  padding: 0 4vw;
+  background-color: var(--black);
+  background-image: url("./assets/logo-white.webp");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 8px;
   color: var(--white);
+  transition: 0.5s;
 }
 
 .developers-banner:hover {
   cursor: pointer;
   scale: 1.01;
-  background-size: 65%;
   box-shadow: 1px 1px 10px var(--light-shadow);
 }
 
@@ -507,9 +630,9 @@ svg {
 /* FOOTER --------------------------------------------- */
 
 .footer-container {
-  height: 20vh;
-  width: 100%;
   position: relative;
+  height: 5vh;
+  width: 100%;
   background-color: var(--black);
 }
 .footer-container a {
@@ -521,7 +644,7 @@ svg {
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 9vh 5%;
+  padding: 1vh 5%;
 }
 .footer-links-social-container img {
   height: 100%;
@@ -533,17 +656,28 @@ svg {
   display: flex;
   align-items: center;
   justify-content: left;
+  padding: 0.7vh 0;
   gap: 5%;
   height: 100%;
   width: 50%;
 }
-.footer-logo {
+.footer-logo-top {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 15px;
+  padding: 0.7vh 0;
+}
+.footer-logo-bottom {
   display: flex;
   justify-content: right;
   align-items: center;
   height: 100%;
   width: 100%;
   gap: 15px;
+  padding: 0.8vh 0;
 }
 .footer-social {
   fill: var(--white);
@@ -581,8 +715,6 @@ svg {
   padding-right: 5px;
 }
 .mobile-header-item {
-  font-weight: 700;
-  font-size: 140%;
   display: flex;
   height: 8vh;
   align-items: center;
@@ -601,16 +733,19 @@ svg {
     height: 100%;
   }
   .vision-container {
+    flex-direction: column;
     height: 100%;
     width: 100%;
     gap: 5vh;
     padding: 5% 5%;
+    background-image: url("./assets/map.webp");
+    background-size: cover;
+    background-blend-mode: color-dodge;
   }
   .vision-top {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    gap: 5vh;
   }
   .vision-bottom {
     width: 100%;
@@ -623,10 +758,16 @@ svg {
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 2vh;
   }
   .vision-header {
-    justify-content: center;
     width: 100%;
+  }
+  .developers-social {
+    padding: 3px;
+  }
+  .developers-bottom {
+    gap: 5px;
   }
 
   .developers-top {
@@ -638,21 +779,9 @@ svg {
   .developers-header {
     padding: 5% 0;
   }
-  .developers-banner {
-    min-height: unset;
-    height: 80%;
-    width: 100%;
-    padding: 0 3% 1rem 5%;
-    border-radius: 25px;
-  }
-  .developers-social {
-    height: 100%;
-    padding: 3% 5%;
-  }
+
   .developers-logo {
-    margin-left: 5px;
-  }
-  .footer-links-social-container {
-    padding: 9vh 3vh 9vh 4vh;
+    padding: 0;
+    margin: 0;
   }
 }

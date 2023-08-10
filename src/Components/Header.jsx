@@ -48,24 +48,26 @@ const Header = () => {
   const desktopHeader = () => {
     return (
       <div className={`header-container ${headerTheme}`}>
-        <div className="header-logo">
+        <div className="header-logo w100">
           <img src={logoWhite} alt="finaleLogo"></img>
           <img src={finaleWhite} alt="finaleText"></img>
         </div>
-        <div className="header-links">
-          <div className="header-item">Blog</div>
-          <div className="header-item">Api</div>
-          <div className="header-item">Docs</div>
-          <div className="header-item">Ecosystem</div>
+        <div className="header-buttons-container flex w100">
+          <div className="header-links w100">
+            <div className="header-item w100">Blog</div>
+            <div className="header-item w100">Api</div>
+            <div className="header-item w100">Docs</div>
+            <div className="header-item w100">Ecosystem</div>
+          </div>
+          <a
+            href="https://app.finalefinance.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-button background-gradient "
+          >
+            Launch App
+          </a>
         </div>
-        <a
-          href="https://app.finalefinance.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="header-button"
-        >
-          Launch App
-        </a>
       </div>
     );
   };
@@ -99,7 +101,7 @@ const Header = () => {
           href="https://app.finalefinance.xyz"
           target="_blank"
           rel="noopener noreferrer"
-          className="header-button"
+          className="header-button background-gradient"
         >
           Launch App
         </a>

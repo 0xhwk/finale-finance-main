@@ -9,8 +9,9 @@ function App() {
     <div className="app-container">
       <Header></Header>
       <Landing></Landing>
+      <Footer position="top"></Footer>
       <Vision></Vision>
-      <Footer></Footer>
+      <Footer position="bottom"></Footer>
     </div>
   );
 }
