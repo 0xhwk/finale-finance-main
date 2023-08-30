@@ -14,8 +14,8 @@ const Vision = () => {
         <div className="finfo vision-text w100">
           Different protocols have different liquidity and fees. FinaleFinance
           finds the most efficient paths for a token swap, also splits your
-          funds between different protocols and aggregates best rates across
-          zksync. FinaleFinance also returns the positive slippage from all
+          funds between different protocols and aggregates best rates across Linea and
+          ZkSync. FinaleFinance also returns the positive slippage from all
           swaps, to the user.
         </div>
       </div>
