@@ -172,11 +172,8 @@ svg {
   align-items: center;
   cursor: pointer;
   border: none;
-  width: 20%;
-  height: 120%;
   min-width: fit-content;
-  padding: 1% 2%;
-
+  padding: 2% 5%;
   transition: all 0.3s ease 0s;
   color: var(--white);
 }

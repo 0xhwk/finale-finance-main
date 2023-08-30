@@ -11,9 +11,9 @@ const Landing = () => {
         </h1>
         <div className="finfo">
           Finale Finance is an aggregator that allows users to find the best
-          swap rates across all Zksync AMMs. We use sophisticated algorithms to
-          find the most efficient path for any swap, resulting in significant
-          savings for users.
+          swap rates across all Linea and Zksync AMMs. We use sophisticated
+          algorithms to find the most efficient path for any swap, resulting in
+          significant savings for users.
         </div>
       </div>
     </div>

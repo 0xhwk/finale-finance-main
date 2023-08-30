@@ -29,7 +29,7 @@ const Vision = () => {
               <OutboundIcon className="outbound-icon"></OutboundIcon>
             </h1>
             <div className="finfo">
-              Supercharge your dApp development on ZkSync Era with Finale
+              Supercharge your dApp development on multiple chains with Finale
               Finance's robust APIs. Join our developer community and harness
               the full potential of decentralized finance.
             </div>
